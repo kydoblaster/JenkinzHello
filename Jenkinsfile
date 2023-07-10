@@ -7,9 +7,20 @@ pipeline {
       }
     }
 
-    stage('List Contents in Log') {
-      steps {
-        sh 'ls -la'
+    stage('Log') {
+      parallel {
+        stage('Log') {
+          steps {
+            sh 'ls -la'
+          }
+        }
+
+        stage('Front end unit test') {
+          steps {
+            sh 'npm i && npm run test:unit'
+          }
+        }
+
       }
     }
 
