@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f Dockerfile . -t newcontainer:latest'
+        sh 'docker build -f Dockerfile . -t latest'
       }
     }
 
@@ -31,7 +31,7 @@ pipeline {
 
     stage('Push') {
       steps {
-        sh 'docker push newcontainer:latest'
+        sh 'docker push latest'
       }
     }
 
