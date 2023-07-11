@@ -15,7 +15,17 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f https://github.com/kydoblaster/JenkinzHello/blob/main/Dockerfile .'
+        sh 'docker build -f Dockerfile .'
+      }
+    }
+
+    stage('log in') {
+      environment {
+        DOCKERHUB_USER = 'kydoblaster'
+        DOCKERHUB_PASSWORD = '3Jedii327!!!'
+      }
+      steps {
+        sh 'docker login -u $DOCKERHUB_USER -p $DOCKERHUB_PASSWORD'
       }
     }
 
