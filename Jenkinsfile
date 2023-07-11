@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build https://github.com/kydoblaster/JenkinzHello/blob/main/Dockerfile'
+        sh 'docker build -f Dockerfile .'
       }
     }
 
