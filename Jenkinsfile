@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f Dockerfile . -t newcon'
+        sh 'docker build -f Dockerfile . -t longconsilvers'
       }
     }
 
@@ -31,7 +31,7 @@ pipeline {
 
     stage('Push') {
       steps {
-        sh 'docker push newcon:latest'
+        sh 'docker push longconsilvers:latest'
       }
     }
 
