@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f Dockerfile .'
+        sh 'docker build -f Dockerfile . -t newcon'
       }
     }
 
@@ -31,7 +31,7 @@ pipeline {
 
     stage('Push') {
       steps {
-        sh 'docker push'
+        sh 'docker push newcon:latest'
       }
     }
 
