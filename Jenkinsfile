@@ -15,7 +15,7 @@ pipeline {
 
     stage('Build') {
       steps {
-        sh 'docker build -f Dockerfile . -t longconsilvers'
+        sh 'docker build -f Dockerfile . -t kydoblaster/longconsilvers'
       }
     }
 
@@ -31,7 +31,7 @@ pipeline {
 
     stage('Push') {
       steps {
-        sh 'docker push longconsilvers:latest'
+        sh 'docker push kydoblaster/longconsilvers:latest'
       }
     }
 
